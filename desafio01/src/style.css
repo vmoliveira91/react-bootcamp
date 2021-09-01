@@ -1,0 +1,42 @@
+#root {
+    display: grid;
+    grid-template-areas: 
+        "header header header"
+        "nav nav nav"
+        "sidebar main main"
+        "footer footer footer";
+    border: 1px solid black;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+}
+
+.header {
+    grid-area: header;   
+    border-bottom: 1px solid black;    
+}
+
+.nav {
+    grid-area: nav;
+    border-bottom: 1px solid black;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.main {
+    grid-area: main;
+    border-bottom: 1px solid black;
+}
+
+.footer {
+    grid-area: footer;
+}

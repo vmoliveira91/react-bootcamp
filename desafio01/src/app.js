@@ -1,6 +1,18 @@
+import Header from './header'
+import Nav from './nav'
+import Sidebar from './sidebar'
+import Main from './main'
+import Footer from './footer'
+
 const App = () => {
     return (
-        <h1>App</h1>
+        <>
+            <Header>Header</Header>
+            <Nav>Menu</Nav>
+            <Sidebar>Sidebar</Sidebar>
+            <Main>Conteúdo</Main>
+            <Footer>Footer</Footer>
+        </>
     )
 }
 
