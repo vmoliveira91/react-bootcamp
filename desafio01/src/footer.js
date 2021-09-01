@@ -1,6 +1,10 @@
-const Footer = ({ children }) => {
+import Heading from './heading'
+
+const Footer = () => {
     return (
-        <footer className="footer container">{children}</footer>
+        <footer className="footer container">
+            <Heading type="2">Footer</Heading>
+        </footer>
     )
 }
 
