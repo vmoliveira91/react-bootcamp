@@ -1,12 +1,12 @@
 const Sidebar = ({ posts }) => {
     return (
-        <sidebar className="sidebar container">
+        <aside className="sidebar container">
             <ul>
                 {posts.map((post) => (
                     <li key={post.id}>{post.title}</li>
                 ))}
             </ul>
-        </sidebar>
+        </aside>
     )
 }
 
