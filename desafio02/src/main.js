@@ -1,11 +1,6 @@
-import { useState } from 'react'
-
 import Heading from './heading'
 
-const Main = ({ titleProps, contentProps }) => {
-    const [title, setTitle] = useState(titleProps)
-    const [content, setContent] = useState(contentProps)
-
+const Main = ({ title, content }) => {
     return (
         <main className="main container">
             <Heading type="2">{title}</Heading>

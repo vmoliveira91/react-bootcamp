@@ -1,3 +1,5 @@
+import { useState } from 'react'
+
 import Header from './header'
 import Nav from './nav'
 import Sidebar from './sidebar'
@@ -44,12 +46,15 @@ const posts = [
 ]
 
 const App = () => {
+    const [title, setTitle] = useState(posts[0].title)
+    const [content, setContent] = useState(posts[0].content)
+
     return (
         <>
             <Header />
             <Nav />
-            <Sidebar posts={posts} />
-            <Main titleProps={posts[0].title} contentProps={posts[0].content}/>
+            <Sidebar posts={posts} title={setTitle} content={setContent} />
+            <Main title={title} content={content}/>
             <Footer />
         </>
     )
