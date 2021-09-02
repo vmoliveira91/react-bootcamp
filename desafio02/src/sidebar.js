@@ -1,9 +1,11 @@
-import Heading from './heading'
-
-const Sidebar = () => {
+const Sidebar = ({ posts }) => {
     return (
         <sidebar className="sidebar container">
-            <Heading type="2">Sidebar</Heading>
+            <ul>
+                {posts.map((post) => (
+                    <li key={post.id}>{post.title}</li>
+                ))}
+            </ul>
         </sidebar>
     )
 }
