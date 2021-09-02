@@ -1,0 +1,63 @@
+#root {
+    display: grid;
+    grid-template-areas: 
+        "header header header"
+        "nav nav nav"
+        "sidebar main main"
+        "footer footer footer";
+    border: 1px solid black;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+}
+
+.header {
+    grid-area: header;   
+    border-bottom: 1px solid black;    
+}
+
+.nav {
+    grid-area: nav;
+    border-bottom: 1px solid black;
+    justify-content: space-around;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    height: auto;
+}
+
+.main {
+    grid-area: main;
+    border-bottom: 1px solid black;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+}
+
+.footer {
+    grid-area: footer;
+}
+
+button {
+    padding: 10px;
+    border: none;
+}
+
+.primary {
+    background-color: blue;
+    color: white;
+}
+
+.secondary {
+    background-color: gray;
+    color: white;
+}
