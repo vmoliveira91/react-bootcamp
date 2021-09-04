@@ -1,0 +1,17 @@
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form > label {
+    width: 200px;
+    margin-top: 10px;
+}
+
+form > label > input {
+    margin-top: 10px;
+}
+
+button[data-js="addCar"] {
+    width: 200px;
+}
