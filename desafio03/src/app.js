@@ -5,7 +5,7 @@ import Form from './form'
 import Table from './table'
 
 const App = () => {
-    const [newCar, setNewCar] = useState({})
+    const [response, setResponse] = useState({})
     const [cars, setCars] = useState([])
     const [erro, setErro] = useState('')
 
@@ -24,20 +24,20 @@ const App = () => {
     }, [])
 
     useEffect(() => {
-        if(newCar.error) {
-            setErro(newCar.message)
+        if(response.error) {
+            setErro(response.message)
         } else {
             setErro('')
             getCars(url)
         }
-    }, [newCar])
+    }, [response])
 
     return (
         <>
-            <Form setNewCar={setNewCar} url={url}>
+            <Form setResponse={setResponse} url={url}>
                 {erro && <Erro message={erro} />}
             </Form>
-            <Table cars={cars} setCars={setCars} />            
+            <Table cars={cars} setResponse={setResponse} url={url} />            
         </>
     )
 }

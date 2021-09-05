@@ -1,4 +1,4 @@
-const Form = ({ setNewCar, url, children }) => {
+const Form = ({ setResponse, url, children }) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -20,42 +20,43 @@ const Form = ({ setNewCar, url, children }) => {
             })
             .then(result => result.json())
         
-        setNewCar(response)
+        if(!response.error)
+            e.target.reset()
+        
+        setResponse(response)
     }
 
     return (
-        <>
-            <form onSubmit={handleSubmit}>
-                <label htmlFor="image">
-                    Imagem (URL):
-                    <input type="text" name="image"/>
-                </label>
-                
-                <label htmlFor="brandModel">
-                    Marca / Modelo:
-                    <input type="text" name="brandModel"/>
-                </label>
+        <form onSubmit={handleSubmit}>
+            <label htmlFor="image">
+                Imagem (URL):
+                <input type="text" name="image"/>
+            </label>
+            
+            <label htmlFor="brandModel">
+                Marca / Modelo:
+                <input type="text" name="brandModel"/>
+            </label>
 
-                <label htmlFor="year">
-                    Ano:
-                    <input type="text" name="year"/>
-                </label>
+            <label htmlFor="year">
+                Ano:
+                <input type="text" name="year"/>
+            </label>
 
-                <label htmlFor="plate">
-                    Placa:
-                    <input type="text" name="plate"/>
-                </label>
+            <label htmlFor="plate">
+                Placa:
+                <input type="text" name="plate"/>
+            </label>
 
-                <label htmlFor="color">
-                    Cor:
-                    <input type="text" name="color"/>
-                </label>
+            <label htmlFor="color">
+                Cor:
+                <input type="text" name="color"/>
+            </label>
 
-                <button type="submit" data-js="addCar">Adicionar carro</button>
+            <button type="submit" data-js="addCar">Adicionar carro</button>
 
-                {children}
-            </form>            
-        </>
+            {children}
+        </form>            
     )
 }
 
