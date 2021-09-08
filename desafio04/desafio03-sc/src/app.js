@@ -8,7 +8,12 @@ import Table from './table'
 const GlobalStyle = createGlobalStyle`
     #root {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: .5fr 1fr;
+        background-color: hsl(185, 41%, 84%);
+        width: 100%;
+        height: 100vh;
+
+        font-family: sans-serif;
     }
 `
 

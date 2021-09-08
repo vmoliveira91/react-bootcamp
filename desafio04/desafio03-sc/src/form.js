@@ -3,20 +3,54 @@ import styled from "styled-components"
 const FormStyle = styled.form`
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    
+    height: 500px;
+    margin: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    background-color: white;
+    border-radius: 10px;
 `
 
 const LabelStyle = styled.label`
-    width: 200px;
     margin-top: 10px;
+
+    color: hsl(184, 14%, 56%);
+    font-weight: bold;
 `
 
 const InputStyle = styled.input`
+    width: 100%;    
+    height: 30px;
     margin-top: 10px;
+    box-sizing: border-box;
+    
+    background-color: hsl(189, 41%, 97%);
+
+    border: none;
+    border-radius: 5px;
+    box-sizing: border-box;
 `
 
 const ButtonStyle = styled.button`
-    margin-top: 15px;
-    width: 177px;
+    width: 150px;
+    height: 30px;
+    margin-top: 20px;
+
+    align-self: flex-end;
+    
+    background-color: #0d686d;
+
+    border: none;
+    border-radius: 5px;
+    box-sizing: border-box;
+
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
 `
 
 const Form = ({ setResponse, url, children }) => {
@@ -49,32 +83,24 @@ const Form = ({ setResponse, url, children }) => {
 
     return (
         <FormStyle onSubmit={handleSubmit}>
-            <LabelStyle htmlFor="image">
-                Imagem (URL):
-                <InputStyle type="text" name="image"/>
-            </LabelStyle>
+            <LabelStyle><h2>Cadastro de Carros</h2></LabelStyle>
+
+            <LabelStyle htmlFor="image">Imagem (URL):</LabelStyle>
+            <InputStyle type="text" name="image"/>
             
-            <LabelStyle htmlFor="brandModel">
-                Marca / Modelo:
-                <InputStyle type="text" name="brandModel"/>
-            </LabelStyle>
+            <LabelStyle htmlFor="brandModel">Marca / Modelo:</LabelStyle>
+            <InputStyle type="text" name="brandModel"/>
+            
+            <LabelStyle htmlFor="year">Ano:</LabelStyle>
+            <InputStyle type="text" name="year"/>
+            
+            <LabelStyle htmlFor="plate">Placa:</LabelStyle>
+            <InputStyle type="text" name="plate"/>            
 
-            <LabelStyle htmlFor="year">
-                Ano:
-                <InputStyle type="text" name="year"/>
-            </LabelStyle>
+            <LabelStyle htmlFor="color">Cor (Hexadecimal):</LabelStyle>
+            <InputStyle type="text" name="color"/>            
 
-            <LabelStyle htmlFor="plate">
-                Placa:
-                <InputStyle type="text" name="plate"/>
-            </LabelStyle>
-
-            <LabelStyle htmlFor="color">
-                Cor:
-                <InputStyle type="text" name="color"/>
-            </LabelStyle>
-
-            <ButtonStyle type="submit" data-js="addCar">Adicionar carro</ButtonStyle>
+            <ButtonStyle type="submit" data-js="addCar">Adicionar</ButtonStyle>
 
             {children}
         </FormStyle>            
