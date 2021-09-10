@@ -52,7 +52,7 @@ const ButtonStyle = styled.button`
 `
 
 
-const Table = ({cars, setResponse, url}) => {
+const Table = ({cars, setCars, setResponse, url}) => {
     const handleDelete = async (e, plate) => {
         const response = await fetch(url, {
                 method: 'DELETE',
@@ -66,6 +66,7 @@ const Table = ({cars, setResponse, url}) => {
             .then(result => result.json())
         
         setResponse(response)
+        setCars(previousState => previousState.filter(car => car.plate !== plate))
     }
 
     return (

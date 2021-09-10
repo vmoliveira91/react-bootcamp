@@ -41,17 +41,16 @@ const App = () => {
             setErro(response.message)
         } else {
             setErro('')
-            getCars(url)
         }
     }, [response])
 
     return (
         <>
             <GlobalStyle />
-            <Form setResponse={setResponse} url={url}>
+            <Form setCars={setCars} setResponse={setResponse} url={url}>
                 {erro && <Erro message={erro} />}
             </Form>
-            <Table cars={cars} setResponse={setResponse} url={url} />            
+            <Table cars={cars} setCars={setCars} setResponse={setResponse} url={url} />            
         </>
     )
 }
