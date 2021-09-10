@@ -1,4 +1,4 @@
-const Form = ({ setResponse, url, children }) => {
+const Form = ({ setCars, setResponse, url, children }) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -20,10 +20,12 @@ const Form = ({ setResponse, url, children }) => {
             })
             .then(result => result.json())
         
-        if(!response.error)
+        if(!response.error) {
+            setCars(previousState => [...previousState, newCar])
             e.target.reset()
+        }           
         
-        setResponse(response)
+        setResponse(response)        
     }
 
     return (
